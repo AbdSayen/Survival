@@ -70,6 +70,8 @@ public class InventoryUI : MonoBehaviour
                 .GetPrefab(items[i].Name)   
                 .GetComponent<SpriteRenderer>().sprite;
         }
+
+        RenderSelectedSlot();
     }
 
     public void Render(List<Item> items) => Render(items.ToArray());

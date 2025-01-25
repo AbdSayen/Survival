@@ -49,6 +49,7 @@ public class PlayerInventory : MonoBehaviour, IStorage
 
             Instantiate(ItemDatabaseManager.db.GetPrefab(Items[itemId].Name), transform.position, Quaternion.identity);
             Items[itemId] = null;
+            InventoryUI.Instance.selectedSlotId = GetFirstFilledSlotId();
             InventoryUI.Instance.Render(Items);
         }
     }

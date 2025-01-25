@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2392981538387280451}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6063705316273781471}
   m_Layer: 0
-  m_Name: Target (5)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4791753854434136590}
   m_Layer: 0
-  m_Name: Target (8)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5580798974419112938}
   m_Layer: 0
-  m_Name: Target (6)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8835779636838007811}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5101608181889417584}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6244888373706301804}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -227,7 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4450779468804894842}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -258,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5114275675196869063}
   m_Layer: 0
-  m_Name: Target (2)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7421729030183810002}
   m_Layer: 0
-  m_Name: Target (3)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -321,6 +321,8 @@ GameObject:
   - component: {fileID: 579911142942129670}
   - component: {fileID: 6773558552329886167}
   - component: {fileID: 8833869443823472431}
+  - component: {fileID: 4860740317403824836}
+  - component: {fileID: 4060867477858315260}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -424,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkable: {fileID: 0}
-  moveSpeed: 1.5
+  moveSpeed: 3
   moveTargets:
   - {fileID: 3729270539075646298}
   - {fileID: 5101608181889417584}
@@ -442,6 +444,73 @@ MonoBehaviour:
   - {fileID: 5580798974419112938}
   - {fileID: 5358406487597365805}
   - {fileID: 4791753854434136590}
+  maxHealth: 25
+--- !u!95 &4860740317403824836
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513622954459920683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d5214c488ad15e45b1f963511bc0819, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &4060867477858315260
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513622954459920683}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0833334, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0833334, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6651535301323043891
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3729270539075646298}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -483,7 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7334513327826817931}
   m_Layer: 0
-  m_Name: Target (4)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -514,7 +583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609335288744863769}
   m_Layer: 0
-  m_Name: Target (1)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -545,7 +614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935322631361046154}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -576,7 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4106098370200584900}
   m_Layer: 0
-  m_Name: Target
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -607,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5358406487597365805}
   m_Layer: 0
-  m_Name: Target (7)
+  m_Name: SimpleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

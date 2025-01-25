@@ -2,11 +2,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour, IHitable
 {
+    [Header("Base")]
     [SerializeField] private Tilemap walkable;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected Transform[] moveTargets;
+
+    [Header("Health & Damage")]
+    [SerializeField] protected float maxHealth;
+    private float health;
 
     private Animator animator;
     private const string IS_WALKING = "IS_WALKING";
@@ -16,7 +21,27 @@ public class Entity : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        health = maxHealth;
     }
+
+    public virtual void TakeHit()
+    {
+        // Инициировать панику (позже)
+    }
+
+    public void TakeHit(float damageValue)
+    {
+        TakeDamage(damageValue);
+    }
+
+    protected virtual void TakeDamage(float damageValue)
+    {
+        TakeHit();
+        health -= damageValue;
+        if (health <= 0) Die();
+    }
+
+    protected virtual void Die() { Destroy(gameObject); }
 
     private void Start()
     {

@@ -1,13 +1,15 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float damage = 10f;
-    [SerializeField] private float maxAttackDistance = 1f; 
-    [SerializeField] private LayerMask hitLayerMask; 
+    [SerializeField] private float maxAttackDistance = 1f;
+    [SerializeField] private float attackDelay = 1f;
 
     private Vector3 attackStart;
     private Vector3 attackEnd;
+    private bool canAttack = true;
 
     public void Handler()
     {
@@ -19,8 +21,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        if (!canAttack) return;
+        canAttack = false;
+
+        StartCoroutine(recover());
+        IEnumerator recover()
+        {
+            yield return new WaitForSeconds(attackDelay);
+            canAttack = true;
+        }
+
         Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, maxAttackDistance, hitLayerMask);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, maxAttackDistance);
 
         foreach (var hit in hits)
         {

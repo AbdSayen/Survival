@@ -23,7 +23,7 @@ public class PlayerInventory : MonoBehaviour, IStorage
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (AddItem(itemWorld.item))
+                    if (((IStorage)this).AddItem(itemWorld.item))
                     {
                         Destroy(itemWorld.gameObject);
                     }
@@ -42,65 +42,15 @@ public class PlayerInventory : MonoBehaviour, IStorage
 
     public void DropItem()
     {
-        if (GetItemsCount() > 0)
+        if (((IStorage)this).GetItemsCount() > 0)
         {
             int itemId = InventoryUI.Instance.selectedSlotId;
             if (Items[itemId] == null) return;
 
-            Instantiate(ItemDatabaseManager.db.GetPrefab(Items[itemId].Name), transform.position, Quaternion.identity);
+            ItemWorld.Spawn(Items[itemId].Name, transform.position);
             Items[itemId] = null;
-            InventoryUI.Instance.selectedSlotId = GetFirstFilledSlotId();
+            InventoryUI.Instance.selectedSlotId = ((IStorage)this).GetFirstFilledSlotId();
             InventoryUI.Instance.Render(Items);
         }
-    }
-
-    public bool AddItem(Item item)
-    {
-        int firstEmptySlot = GetFirstEmptySlotId();
-        if (firstEmptySlot != -1)
-        {
-            Items[firstEmptySlot] = item;
-            InventoryUI.Instance.Render(Items);
-            return true;
-        }
-        return false;
-    }
-
-    private int GetItemsCount()
-    {
-        int count = 0;
-
-        for (int i = 0; i < Items.Length; i++)
-        {
-            if (Items[i] != null)
-            {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    private int GetFirstFilledSlotId()
-    {
-        for (int i = 0; i < Items.Length; i++)
-        {
-            if (Items[i] != null)
-            {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    private int GetFirstEmptySlotId()
-    {
-        for (int i = 0; i < Items.Length; i++)
-        {
-            if (Items[i] == null)
-            {
-                return i;
-            }
-        }
-        return -1;
     }
 }

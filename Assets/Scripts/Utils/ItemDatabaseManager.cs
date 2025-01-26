@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ItemDatabaseManager : MonoBehaviour
 {
-    [SerializeField] private ItemDatabase database;
-    public static ItemDatabase db;
+    [SerializeField] private Database database;
+    public static Database db;
 
     private void Awake()
     {

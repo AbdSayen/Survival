@@ -9,12 +9,13 @@ public abstract class Entity : MonoBehaviour, IHitable
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected Transform[] moveTargets;
 
-    [Header("Health & Damage")]
+    [Header("Health & Damage")] 
     [SerializeField] protected float maxHealth;
     private float health;
 
     private Animator animator;
     private const string IS_WALKING = "IS_WALKING";
+    [HideInInspector] public Item[] Items { get; set; }
 
     IEnumerator moving;
 

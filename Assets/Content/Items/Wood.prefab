@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1820383925
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1253689097, guid: 9d310d2f6c123e24898c066a462afec1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,9 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e48dcc6fa13e3547a667fc0cae88749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  factory: {fileID: 11400000, guid: c324066887c10c04b8138cde42df716f, type: 2}
   itemName: Wood
-  database: {fileID: 11400000, guid: ea07c8586653a5a4c87dd218144a954c, type: 2}
   amplitude: 0.15
   frequency: 3
 --- !u!58 &6238584037046966720
